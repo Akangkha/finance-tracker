@@ -12,9 +12,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use("/api", require("./routes/routes"));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("root directory");
 });
 
 app.listen(port, () => {
